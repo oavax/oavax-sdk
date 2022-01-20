@@ -407,7 +407,7 @@ function Currency(decimals, symbol, name) {
 Currency.ETHER = /*#__PURE__*/new Currency(18, 'ETH', 'Ether');
 var ETHER = Currency.ETHER;
 
-var _WETH, _WAVAX;
+var _WETH;
 /**
  * Represents an ERC20 token with a unique address and some metadata.
  */
@@ -471,7 +471,6 @@ function currencyEquals(currencyA, currencyB) {
   }
 }
 var WETH = (_WETH = {}, _WETH[exports.ChainId.MAINNET] = /*#__PURE__*/new Token(exports.ChainId.MAINNET, '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', 18, 'WETH', 'Wrapped Ether'), _WETH[exports.ChainId.TESTNET] = /*#__PURE__*/new Token(exports.ChainId.TESTNET, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH);
-var WAVAX = (_WAVAX = {}, _WAVAX[exports.ChainId.MAINNET] = /*#__PURE__*/new Token(exports.ChainId.MAINNET, '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7', 18, 'WAWAX', 'Wrapped AWAX'), _WAVAX[exports.ChainId.TESTNET] = /*#__PURE__*/new Token(exports.ChainId.TESTNET, '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7', 18, 'WAWAX', 'Wrapped AWAX'), _WAVAX);
 
 var _toSignificantRoundin, _toFixedRounding;
 var Decimal = /*#__PURE__*/toFormat(_Decimal);
@@ -2291,8 +2290,7 @@ var ERC20 = [
 
 var _TOKEN_DECIMALS_CACHE;
 var TOKEN_DECIMALS_CACHE = (_TOKEN_DECIMALS_CACHE = {}, _TOKEN_DECIMALS_CACHE[exports.ChainId.MAINNET] = {
-  '0xE0B7927c4aF23765Cb51314A0E0521A9645F0E2A': 9 // DGD
-
+  '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7': 18
 }, _TOKEN_DECIMALS_CACHE);
 /**
  * Contains methods for constructing instances of pairs and tokens from on-chain data.
@@ -2444,7 +2442,6 @@ exports.Router = Router;
 exports.Token = Token;
 exports.TokenAmount = TokenAmount;
 exports.Trade = Trade;
-exports.WAVAX = WAVAX;
 exports.WETH = WETH;
 exports.currencyEquals = currencyEquals;
 exports.inputOutputComparator = inputOutputComparator;

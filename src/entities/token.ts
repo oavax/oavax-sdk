@@ -72,20 +72,3 @@ export const WETH = {
     'Wrapped Ether'
   )
 }
-
-export const WAVAX = {
-  [ChainId.MAINNET]: new Token(
-    ChainId.MAINNET,
-    '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
-    18,
-    'WAWAX',
-    'Wrapped AWAX'
-  ),
-  [ChainId.TESTNET]: new Token(
-    ChainId.TESTNET,
-    '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
-    18,
-    'WAWAX',
-    'Wrapped AWAX'
-  )
-}

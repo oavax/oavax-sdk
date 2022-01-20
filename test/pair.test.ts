@@ -1,8 +1,8 @@
 import { ChainId, Token, Pair, TokenAmount, WETH, Price } from '../src'
 
 describe('Pair', () => {
-  const OAVAX = new Token(ChainId.TESTNET, '0x2eFb50049C2dB2309934f1Cc48fE1163C5607b77', 18, 'OAVAX', 'USD Coin')
-  const WAVAX = new Token(ChainId.TESTNET, '0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a', 18, 'WAVAX', 'WAVAX Stablecoin')
+  const OAVAX = new Token(ChainId.MAINNET, '0x7767f8ed52F9c8AB777512D649006fFD77008882', 18, 'OAVAX', 'USD Coin')
+  const WAVAX = new Token(ChainId.MAINNET, '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7', 18, 'WAVAX', 'WAVAX Stablecoin')
 
   describe('constructor', () => {
     it('cannot be used for tokens on different chains', () => {
@@ -14,7 +14,7 @@ describe('Pair', () => {
 
   describe('#getAddress', () => {
     it('returns the correct address', () => {
-      expect(Pair.getAddress(OAVAX, WAVAX)).toEqual('0xE51F5733849561f2480C401333E041bdcE8d695d')
+      expect(Pair.getAddress(OAVAX, WAVAX)).toEqual('0xDe449B410d3D4EA783696a7dBE68534645617620')
     })
   })
 
@@ -81,7 +81,7 @@ describe('Pair', () => {
     })
 
     it('throws if invalid token', () => {
-      expect(() => pair.priceOf(WETH[ChainId.TESTNET])).toThrow('TOKEN')
+      expect(() => pair.priceOf(WETH[ChainId.MAINNET])).toThrow('TOKEN')
     })
   })
 
@@ -97,22 +97,22 @@ describe('Pair', () => {
 
     it('throws if not in the pair', () => {
       expect(() =>
-        new Pair(new TokenAmount(WAVAX, '101'), new TokenAmount(OAVAX, '100')).reserveOf(WETH[ChainId.TESTNET])
+        new Pair(new TokenAmount(WAVAX, '101'), new TokenAmount(OAVAX, '100')).reserveOf(WETH[ChainId.MAINNET])
       ).toThrow('TOKEN')
     })
   })
 
   describe('#chainId', () => {
     it('returns the token0 chainId', () => {
-      expect(new Pair(new TokenAmount(OAVAX, '100'), new TokenAmount(WAVAX, '100')).chainId).toEqual(ChainId.TESTNET)
-      expect(new Pair(new TokenAmount(WAVAX, '100'), new TokenAmount(OAVAX, '100')).chainId).toEqual(ChainId.TESTNET)
+      expect(new Pair(new TokenAmount(OAVAX, '100'), new TokenAmount(WAVAX, '100')).chainId).toEqual(ChainId.MAINNET)
+      expect(new Pair(new TokenAmount(WAVAX, '100'), new TokenAmount(OAVAX, '100')).chainId).toEqual(ChainId.MAINNET)
     })
   })
   describe('#involvesToken', () => {
     expect(new Pair(new TokenAmount(OAVAX, '100'), new TokenAmount(WAVAX, '100')).involvesToken(OAVAX)).toEqual(true)
     expect(new Pair(new TokenAmount(OAVAX, '100'), new TokenAmount(WAVAX, '100')).involvesToken(WAVAX)).toEqual(true)
     expect(
-      new Pair(new TokenAmount(OAVAX, '100'), new TokenAmount(WAVAX, '100')).involvesToken(WETH[ChainId.TESTNET])
+      new Pair(new TokenAmount(OAVAX, '100'), new TokenAmount(WAVAX, '100')).involvesToken(WETH[ChainId.MAINNET])
     ).toEqual(false)
   })
 })

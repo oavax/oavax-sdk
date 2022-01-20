@@ -28,7 +28,3 @@ export declare const WETH: {
     43114: Token;
     1666700000: Token;
 };
-export declare const WAVAX: {
-    43114: Token;
-    1666700000: Token;
-};

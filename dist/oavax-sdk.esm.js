@@ -2325,7 +2325,7 @@ var Fetcher = /*#__PURE__*/function () {
           switch (_context.prev = _context.next) {
             case 0:
               if (provider === void 0) {
-                provider = /*#__PURE__*/new JsonRpcProvider("https://api.s0.t.hmny.io", {
+                provider = /*#__PURE__*/new JsonRpcProvider("https://api.avax.network/ext/bc/C/rpc", {
                   chainId: 43114,
                   name: "Avalanche"
                 });
@@ -2389,7 +2389,7 @@ var Fetcher = /*#__PURE__*/function () {
           switch (_context2.prev = _context2.next) {
             case 0:
               if (provider === void 0) {
-                provider = /*#__PURE__*/new JsonRpcProvider("https://api.s0.t.hmny.io", {
+                provider = /*#__PURE__*/new JsonRpcProvider("https://api.avax.network/ext/bc/C/rpc", {
                   chainId: 43114,
                   name: "Avalanche"
                 });

@@ -35,7 +35,7 @@ export abstract class Fetcher {
   public static async fetchTokenData(
     chainId: ChainId,
     address: string,
-    provider = new JsonRpcProvider("https://api.s0.t.hmny.io", {chainId: 43114, name: "Avalanche"}),
+    provider = new JsonRpcProvider("https://api.avax.network/ext/bc/C/rpc", {chainId: 43114, name: "Avalanche"}),
     symbol?: string,
     name?: string
   ): Promise<Token> {
@@ -64,7 +64,7 @@ export abstract class Fetcher {
   public static async fetchPairData(
     tokenA: Token,
     tokenB: Token,
-    provider = new JsonRpcProvider("https://api.s0.t.hmny.io", {chainId: 43114, name: "Avalanche"})
+    provider = new JsonRpcProvider("https://api.avax.network/ext/bc/C/rpc", {chainId: 43114, name: "Avalanche"})
   ): Promise<Pair> {
     invariant(tokenA.chainId === tokenB.chainId, 'CHAIN_ID')
     const address = Pair.getAddress(tokenA, tokenB)
